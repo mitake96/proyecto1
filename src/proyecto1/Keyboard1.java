@@ -9,8 +9,15 @@ public class Keyboard1 {
 	public static void closeKeyboard() {
 		keyboard.close();
 	}
+	
+	public static char lecturaCaracter() {
+		char x = ' ';
+		x=keyboard.next().charAt(0);
+		
+		return x;
+	}
+	
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 
 	
 		
