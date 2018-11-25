@@ -17,6 +17,14 @@ public class Keyboard1 {
 		return x;
 	}
 	
+	public static String lecturaString() {
+		
+		String x = "";
+		x=keyboard.next();
+		return x;
+	}
+	
+	
 	public static void main(String[] args) {
 
 	
