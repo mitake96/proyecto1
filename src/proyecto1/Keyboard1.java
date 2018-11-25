@@ -1,5 +1,6 @@
 package proyecto1;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Keyboard1 {
@@ -24,10 +25,27 @@ public class Keyboard1 {
 		return x;
 	}
 	
+	public static int lecturaInt() {
+		int x = 0;
+		boolean y = true;
+		do {
+		try {
+		x=keyboard.nextInt();
+		y = false;
+		}
+		catch (InputMismatchException e) {
+			y = true;
+			keyboard.nextLine();
+			System.out.println("Error, introduce un número: ");
+		}
+		} while(y);
+		return x;
+	}
 	
 	public static void main(String[] args) {
 
-	
+	System.out.println("Introduce un número: ");
+	lecturaInt();
 		
 	}
 
