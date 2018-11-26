@@ -11,10 +11,12 @@ public class Keyboard1 {
 		keyboard.close();
 	}
 
-// Creación de enum
+// Creacion de primer enum
 	public enum Enum{ MAYORIGUAL, MENORIGUAL, MAYOR, MENOR}
 
-// Lectura de un carácter
+// Creacion de segundo enum
+	public enum Enum2{ AMBOSINC, AMBOSEXC, MININC, MINEXC}
+// Lectura de un caracter
 	public static char lecturaCaracter() {
 		char x = ' ';
 		x=keyboard.next().charAt(0);
@@ -29,7 +31,7 @@ public class Keyboard1 {
 		return x;
 	}
 	
-// Lectura de un número cualquiera para cada tipo
+// Lectura de un numero cualquiera para cada tipo
 	
 	public static int lecturaInt() {
 		int x = 0;
@@ -42,7 +44,7 @@ public class Keyboard1 {
 		catch (InputMismatchException e) {
 			y = true;
 			keyboard.nextLine();
-			System.out.println("Error, introduce un número: ");
+			System.out.println("Error, introduce un numero: ");
 		}
 		} while(y);
 		return x;
@@ -60,7 +62,7 @@ public class Keyboard1 {
 			catch (InputMismatchException e) {
 				y = true;
 				keyboard.nextLine();
-				System.out.println("Error, introduce un número: ");
+				System.out.println("Error, introduce un nï¿½mero: ");
 			}
 			} while(y);
 			return x;
@@ -79,7 +81,7 @@ public class Keyboard1 {
 		catch (InputMismatchException e) {
 			y = true;
 			keyboard.nextLine();
-			System.out.println("Error, introduce un número: ");
+			System.out.println("Error, introduce un nï¿½mero: ");
 		}
 		} while(y);
 		return x;
@@ -97,7 +99,7 @@ public class Keyboard1 {
 		catch (InputMismatchException e) {
 			y = true;
 			keyboard.nextLine();
-			System.out.println("Error, introduce un número: ");
+			System.out.println("Error, introduce un nï¿½mero: ");
 		}
 		} while(y);
 		return x;
@@ -115,7 +117,7 @@ public class Keyboard1 {
 		catch (InputMismatchException e) {
 			y = true;
 			keyboard.nextLine();
-			System.out.println("Error, introduce un número: ");
+			System.out.println("Error, introduce un nï¿½mero: ");
 		}
 		} while(y);
 		return x;
@@ -133,13 +135,13 @@ public class Keyboard1 {
 		catch (InputMismatchException e) {
 			y = true;
 			keyboard.nextLine();
-			System.out.println("Error, introduce un número : ");
+			System.out.println("Error, introduce un nï¿½mero : ");
 		}
 		} while(y);
 		return x;
 	}
 	
-// Parámetros
+// Lectura de un número >, < o igual de un valor pasado como parámetro
 	
 	public static int parametros (Enum posibles, int x) {
 		int numero = 0;
@@ -147,7 +149,7 @@ public class Keyboard1 {
 			do {
 				numero = lecturaInt();
 				if (numero < x) {
-					System.out.println("Error, número incorrecto");
+					System.out.println("Error, nï¿½mero incorrecto");
 				}
 			} while (numero < x);
 		}
@@ -155,7 +157,7 @@ public class Keyboard1 {
 			do {
 				numero = lecturaInt();
 				if (numero > x) {
-					System.out.println("Error, número incorrecto");
+					System.out.println("Error, nï¿½mero incorrecto");
 				}
 			} while (numero > x);
 		}
@@ -163,7 +165,7 @@ public class Keyboard1 {
 			do {
 				numero = lecturaInt();
 				if (numero <= x) {
-					System.out.println("Error, número incorrecto");
+					System.out.println("Error, nï¿½mero incorrecto");
 				}
 			} while (numero <= x);
 		}
@@ -171,7 +173,7 @@ public class Keyboard1 {
 			do {
 				numero = lecturaInt();
 				if (numero >= x) {
-					System.out.println("Error, número incorrecto");
+					System.out.println("Error, nï¿½mero incorrecto");
 				}
 			} while (numero >= x);
 		}
@@ -184,7 +186,7 @@ public class Keyboard1 {
 			do {
 				numero = lecturaByte();
 				if (numero < x) {
-					System.out.println("Error, número incorrecto");
+					System.out.println("Error, nï¿½mero incorrecto");
 				}
 			} while (numero < x);
 		}
@@ -192,7 +194,7 @@ public class Keyboard1 {
 			do {
 				numero = lecturaByte();
 				if (numero > x) {
-					System.out.println("Error, número incorrecto");
+					System.out.println("Error, nï¿½mero incorrecto");
 				}
 			} while (numero > x);
 		}
@@ -200,7 +202,7 @@ public class Keyboard1 {
 			do {
 				numero = lecturaByte();
 				if (numero <= x) {
-					System.out.println("Error, número incorrecto");
+					System.out.println("Error, nï¿½mero incorrecto");
 				}
 			} while (numero <= x);
 		}
@@ -208,7 +210,7 @@ public class Keyboard1 {
 			do {
 				numero = lecturaByte();
 				if (numero >= x) {
-					System.out.println("Error, número incorrecto");
+					System.out.println("Error, nï¿½mero incorrecto");
 				}
 			} while (numero >= x);
 		}
@@ -221,7 +223,7 @@ public class Keyboard1 {
 			do {
 				numero = lecturaShort();
 				if (numero < x) {
-					System.out.println("Error, número incorrecto");
+					System.out.println("Error, nï¿½mero incorrecto");
 				}
 			} while (numero < x);
 		}
@@ -229,7 +231,7 @@ public class Keyboard1 {
 			do {
 				numero = lecturaShort();
 				if (numero > x) {
-					System.out.println("Error, número incorrecto");
+					System.out.println("Error, nï¿½mero incorrecto");
 				}
 			} while (numero > x);
 		}
@@ -237,7 +239,7 @@ public class Keyboard1 {
 			do {
 				numero = lecturaShort();
 				if (numero <= x) {
-					System.out.println("Error, número incorrecto");
+					System.out.println("Error, nï¿½mero incorrecto");
 				}
 			} while (numero <= x);
 		}
@@ -245,7 +247,7 @@ public class Keyboard1 {
 			do {
 				numero = lecturaShort();
 				if (numero >= x) {
-					System.out.println("Error, número incorrecto");
+					System.out.println("Error, nï¿½mero incorrecto");
 				}
 			} while (numero >= x);
 		}
@@ -258,7 +260,7 @@ public class Keyboard1 {
 			do {
 				numero = lecturaLong();
 				if (numero < x) {
-					System.out.println("Error, número incorrecto");
+					System.out.println("Error, nï¿½mero incorrecto");
 				}
 			} while (numero < x);
 		}
@@ -266,7 +268,7 @@ public class Keyboard1 {
 			do {
 				numero = lecturaLong();
 				if (numero > x) {
-					System.out.println("Error, número incorrecto");
+					System.out.println("Error, nï¿½mero incorrecto");
 				}
 			} while (numero > x);
 		}
@@ -274,7 +276,7 @@ public class Keyboard1 {
 			do {
 				numero = lecturaLong();
 				if (numero <= x) {
-					System.out.println("Error, número incorrecto");
+					System.out.println("Error, nï¿½mero incorrecto");
 				}
 			} while (numero <= x);
 		}
@@ -282,7 +284,7 @@ public class Keyboard1 {
 			do {
 				numero = lecturaLong();
 				if (numero >= x) {
-					System.out.println("Error, número incorrecto");
+					System.out.println("Error, nï¿½mero incorrecto");
 				}
 			} while (numero >= x);
 		}
@@ -295,7 +297,7 @@ public class Keyboard1 {
 			do {
 				numero = lecturaFloat();
 				if (numero < x) {
-					System.out.println("Error, número incorrecto");
+					System.out.println("Error, nï¿½mero incorrecto");
 				}
 			} while (numero < x);
 		}
@@ -303,7 +305,7 @@ public class Keyboard1 {
 			do {
 				numero = lecturaFloat();
 				if (numero > x) {
-					System.out.println("Error, número incorrecto");
+					System.out.println("Error, nï¿½mero incorrecto");
 				}
 			} while (numero > x);
 		}
@@ -311,7 +313,7 @@ public class Keyboard1 {
 			do {
 				numero = lecturaFloat();
 				if (numero <= x) {
-					System.out.println("Error, número incorrecto");
+					System.out.println("Error, nï¿½mero incorrecto");
 				}
 			} while (numero <= x);
 		}
@@ -319,7 +321,7 @@ public class Keyboard1 {
 			do {
 				numero = lecturaFloat();
 				if (numero >= x) {
-					System.out.println("Error, número incorrecto");
+					System.out.println("Error, nï¿½mero incorrecto");
 				}
 			} while (numero >= x);
 		}
@@ -332,7 +334,7 @@ public class Keyboard1 {
 			do {
 				numero = lecturaDouble();
 				if (numero < x) {
-					System.out.println("Error, número incorrecto");
+					System.out.println("Error, nï¿½mero incorrecto");
 				}
 			} while (numero < x);
 		}
@@ -340,7 +342,7 @@ public class Keyboard1 {
 			do {
 				numero = lecturaDouble();
 				if (numero > x) {
-					System.out.println("Error, número incorrecto");
+					System.out.println("Error, nï¿½mero incorrecto");
 				}
 			} while (numero > x);
 		}
@@ -348,7 +350,7 @@ public class Keyboard1 {
 			do {
 				numero = lecturaDouble();
 				if (numero <= x) {
-					System.out.println("Error, número incorrecto");
+					System.out.println("Error, nï¿½mero incorrecto");
 				}
 			} while (numero <= x);
 		}
@@ -356,18 +358,66 @@ public class Keyboard1 {
 			do {
 				numero = lecturaDouble();
 				if (numero >= x) {
-					System.out.println("Error, número incorrecto");
+					System.out.println("Error, nï¿½mero incorrecto");
 				}
 			} while (numero >= x);
 		}
 		return numero;
 	}
+
+// Lectura de un número entre el valor mínimo y máximo 	
+	
+	public static int lecturaminmax (Enum2 valor, int x, int y) {
+		int numero=0;
+		if (x > y) {
+			throw new IllegalArgumentException();
+		}
+		if (valor == Enum2.AMBOSINC) {
+			do {
+			numero = lecturaInt();
+			if (numero < x || numero > y) {
+				System.out.println("Incorrecto, introduzca un número válido: ");
+			}
+			} while (numero < x || numero > y);
+		}
+		
+		else if (valor == Enum2.AMBOSEXC) {
+			do {
+			numero = lecturaInt();
+			if (numero <= x || numero >= y) {
+				System.out.println("Incorrecto, introduzca un número válido: ");
+			}
+			} while (numero <= x || numero >= y);
+		}
+		else if (valor == Enum2.MINEXC) {
+			do {
+			numero = lecturaInt();
+			if (numero <= x || numero > y) {
+				System.out.println("Incorrecto, introduzca un número válido: ");
+			}
+			} while (numero <= x || numero > y);
+		}
+		else if (valor == Enum2.MININC) {
+			do {
+			numero = lecturaInt();
+			if (numero < x || numero >= y) {
+				System.out.println("Incorrecto, introduzca un número válido: ");
+			}
+			} while (numero < x || numero >= y);
+		}
+		
+		return numero; 
+	}
+	
 	
 	public static void main(String[] args) {
 
-	System.out.println("Mete un número mayor o igual que 15");
+	/*System.out.println("Mete un nï¿½mero mayor o igual que 15");
 	parametros(Enum.MAYORIGUAL, 15);
+	*/
 		
+		System.out.println("Introduce un número entre 0 y 10");
+		lecturaminmax(Enum2.AMBOSINC, 0, 10);
 	}
 
 }
