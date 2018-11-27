@@ -409,6 +409,215 @@ public class Keyboard1 {
 		return numero; 
 	}
 	
+	public static byte lecturaminmax (Enum2 valor, byte x, byte y) {
+		byte numero=0;
+		if (x > y) {
+			throw new IllegalArgumentException();
+		}
+		if (valor == Enum2.AMBOSINC) {
+			do {
+			numero = lecturaByte();
+			if (numero < x || numero > y) {
+				System.out.println("Incorrecto, introduzca un número válido: ");
+			}
+			} while (numero < x || numero > y);
+		}
+		
+		else if (valor == Enum2.AMBOSEXC) {
+			do {
+			numero = lecturaByte();
+			if (numero <= x || numero >= y) {
+				System.out.println("Incorrecto, introduzca un número válido: ");
+			}
+			} while (numero <= x || numero >= y);
+		}
+		else if (valor == Enum2.MINEXC) {
+			do {
+			numero = lecturaByte();
+			if (numero <= x || numero > y) {
+				System.out.println("Incorrecto, introduzca un número válido: ");
+			}
+			} while (numero <= x || numero > y);
+		}
+		else if (valor == Enum2.MININC) {
+			do {
+			numero = lecturaByte();
+			if (numero < x || numero >= y) {
+				System.out.println("Incorrecto, introduzca un número válido: ");
+			}
+			} while (numero < x || numero >= y);
+		}
+		
+		return numero; 
+	}
+	
+	public static short lecturaminmax (Enum2 valor, short x, short y) {
+		short numero=0;
+		if (x > y) {
+			throw new IllegalArgumentException();
+		}
+		if (valor == Enum2.AMBOSINC) {
+			do {
+			numero = lecturaShort();
+			if (numero < x || numero > y) {
+				System.out.println("Incorrecto, introduzca un número válido: ");
+			}
+			} while (numero < x || numero > y);
+		}
+		
+		else if (valor == Enum2.AMBOSEXC) {
+			do {
+			numero = lecturaShort();
+			if (numero <= x || numero >= y) {
+				System.out.println("Incorrecto, introduzca un número válido: ");
+			}
+			} while (numero <= x || numero >= y);
+		}
+		else if (valor == Enum2.MINEXC) {
+			do {
+			numero = lecturaShort();
+			if (numero <= x || numero > y) {
+				System.out.println("Incorrecto, introduzca un número válido: ");
+			}
+			} while (numero <= x || numero > y);
+		}
+		else if (valor == Enum2.MININC) {
+			do {
+			numero = lecturaShort();
+			if (numero < x || numero >= y) {
+				System.out.println("Incorrecto, introduzca un número válido: ");
+			}
+			} while (numero < x || numero >= y);
+		}
+		
+		return numero; 
+	}
+	
+	public static long lecturaminmax (Enum2 valor, long x, long y) {
+		long numero=0;
+		if (x > y) {
+			throw new IllegalArgumentException();
+		}
+		if (valor == Enum2.AMBOSINC) {
+			do {
+			numero = lecturaLong();
+			if (numero < x || numero > y) {
+				System.out.println("Incorrecto, introduzca un número válido: ");
+			}
+			} while (numero < x || numero > y);
+		}
+		
+		else if (valor == Enum2.AMBOSEXC) {
+			do {
+			numero = lecturaLong();
+			if (numero <= x || numero >= y) {
+				System.out.println("Incorrecto, introduzca un número válido: ");
+			}
+			} while (numero <= x || numero >= y);
+		}
+		else if (valor == Enum2.MINEXC) {
+			do {
+			numero = lecturaLong();
+			if (numero <= x || numero > y) {
+				System.out.println("Incorrecto, introduzca un número válido: ");
+			}
+			} while (numero <= x || numero > y);
+		}
+		else if (valor == Enum2.MININC) {
+			do {
+			numero = lecturaLong();
+			if (numero < x || numero >= y) {
+				System.out.println("Incorrecto, introduzca un número válido: ");
+			}
+			} while (numero < x || numero >= y);
+		}
+		
+		return numero; 
+	}
+	
+	public static float lecturaminmax (Enum2 valor, float x, float y) {
+		float numero=0;
+		if (x > y) {
+			throw new IllegalArgumentException();
+		}
+		if (valor == Enum2.AMBOSINC) {
+			do {
+			numero = lecturaFloat();
+			if (numero < x || numero > y) {
+				System.out.println("Incorrecto, introduzca un número válido: ");
+			}
+			} while (numero < x || numero > y);
+		}
+		
+		else if (valor == Enum2.AMBOSEXC) {
+			do {
+			numero = lecturaFloat();
+			if (numero <= x || numero >= y) {
+				System.out.println("Incorrecto, introduzca un número válido: ");
+			}
+			} while (numero <= x || numero >= y);
+		}
+		else if (valor == Enum2.MINEXC) {
+			do {
+			numero = lecturaFloat();
+			if (numero <= x || numero > y) {
+				System.out.println("Incorrecto, introduzca un número válido: ");
+			}
+			} while (numero <= x || numero > y);
+		}
+		else if (valor == Enum2.MININC) {
+			do {
+			numero = lecturaFloat();
+			if (numero < x || numero >= y) {
+				System.out.println("Incorrecto, introduzca un número válido: ");
+			}
+			} while (numero < x || numero >= y);
+		}
+		
+		return numero; 
+	}
+	
+	public static double lecturaminmax (Enum2 valor, double x, double y) {
+		double numero=0;
+		if (x > y) {
+			throw new IllegalArgumentException();
+		}
+		if (valor == Enum2.AMBOSINC) {
+			do {
+			numero = lecturaDouble();
+			if (numero < x || numero > y) {
+				System.out.println("Incorrecto, introduzca un número válido: ");
+			}
+			} while (numero < x || numero > y);
+		}
+		
+		else if (valor == Enum2.AMBOSEXC) {
+			do {
+			numero = lecturaDouble();
+			if (numero <= x || numero >= y) {
+				System.out.println("Incorrecto, introduzca un número válido: ");
+			}
+			} while (numero <= x || numero >= y);
+		}
+		else if (valor == Enum2.MINEXC) {
+			do {
+			numero = lecturaDouble();
+			if (numero <= x || numero > y) {
+				System.out.println("Incorrecto, introduzca un número válido: ");
+			}
+			} while (numero <= x || numero > y);
+		}
+		else if (valor == Enum2.MININC) {
+			do {
+			numero = lecturaDouble();
+			if (numero < x || numero >= y) {
+				System.out.println("Incorrecto, introduzca un número válido: ");
+			}
+			} while (numero < x || numero >= y);
+		}
+		
+		return numero; 
+	}
 	
 	public static void main(String[] args) {
 
