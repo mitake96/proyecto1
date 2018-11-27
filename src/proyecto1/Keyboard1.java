@@ -619,6 +619,27 @@ public class Keyboard1 {
 		return numero; 
 	}
 	
+// Lectura de un boolean
+	
+	public static boolean lecturaBoolean () {
+		int x;
+		boolean opcion = true;
+		do {
+		
+		x=keyboard.nextInt();
+		if (x < 1 || x > 2) {
+			System.out.println("Error, introduzca un número válido: ");
+		}
+		
+		} while (x < 1 || x > 2);
+		if (x == 2) {
+			opcion = false;
+		}
+		
+		
+		return opcion;
+	}
+	
 	public static void main(String[] args) {
 
 	/*System.out.println("Mete un nï¿½mero mayor o igual que 15");
@@ -627,6 +648,11 @@ public class Keyboard1 {
 		
 		System.out.println("Introduce un número entre 0 y 10");
 		lecturaminmax(Enum2.AMBOSINC, 0, 10);
+
+		System.out.println("Introduce Rojo (1) o Verde (2)");
+		lecturaBoolean();
 	}
+	
+
 
 }
