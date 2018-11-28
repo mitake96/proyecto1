@@ -62,7 +62,7 @@ public class Keyboard1 {
 		catch (InputMismatchException e) {
 			y = true;
 			keyboard.nextLine();
-			System.out.println("Error, introduce un numero: ");
+			System.out.println("Error, introduce un numero valido: ");
 		}
 		} while(y);
 		return x;
@@ -80,7 +80,7 @@ public class Keyboard1 {
 			catch (InputMismatchException e) {
 				y = true;
 				keyboard.nextLine();
-				System.out.println("Error, introduce un nï¿½mero: ");
+				System.out.println("Error, introduce un numero valido: ");
 			}
 			} while(y);
 			return x;
@@ -99,7 +99,7 @@ public class Keyboard1 {
 		catch (InputMismatchException e) {
 			y = true;
 			keyboard.nextLine();
-			System.out.println("Error, introduce un nï¿½mero: ");
+			System.out.println("Error, introduce un numero valido: ");
 		}
 		} while(y);
 		return x;
@@ -117,7 +117,7 @@ public class Keyboard1 {
 		catch (InputMismatchException e) {
 			y = true;
 			keyboard.nextLine();
-			System.out.println("Error, introduce un nï¿½mero: ");
+			System.out.println("Error, introduce un numero valido: ");
 		}
 		} while(y);
 		return x;
@@ -135,7 +135,7 @@ public class Keyboard1 {
 		catch (InputMismatchException e) {
 			y = true;
 			keyboard.nextLine();
-			System.out.println("Error, introduce un nï¿½mero: ");
+			System.out.println("Error, introduce un numero valido: ");
 		}
 		} while(y);
 		return x;
@@ -153,7 +153,7 @@ public class Keyboard1 {
 		catch (InputMismatchException e) {
 			y = true;
 			keyboard.nextLine();
-			System.out.println("Error, introduce un nï¿½mero : ");
+			System.out.println("Error, introduce un numero valido : ");
 		}
 		} while(y);
 		return x;
@@ -662,22 +662,20 @@ public class Keyboard1 {
  */
 
 	
-	public static boolean lecturaBoolean (String opcion1, String opcion2) {
-		boolean opcion = true, error = false;
+	public static boolean lecturaBoolean (String inicio, String opcion1, String opcion2) {
+		boolean opcion = true;
+		int num;
+		System.out.printf("%s%n1- %s%n2- %s%n",inicio,opcion1,opcion2);
 		do {
-			error = false;
-		
-		if (opcion1.equals("1")) {
-			opcion = true;
+		num = lecturaInt();
+		} while (num < 1 || num > 2);
+		if (num == 1) {
+			opcion = true;			
 		}
-		else if (opcion1.equals("2")) {
+		else if (num == 2) {
 			opcion = false;
 		}
-		else {
-			System.out.println("Introduce un carácter valido: ");
-			error = true;
-		}
-		} while (error == true);
+		
 				
 		return opcion;
 	}
@@ -702,17 +700,377 @@ public class Keyboard1 {
 		return devuelve;
 	}
 
+// Hacer un menú de prueba en el main con todas las funciones anteriormente creadass.
 	public static void main(String[] args) {
-
-	/*System.out.println("Mete un nï¿½mero mayor o igual que 15");
-	parametros(Enum.MAYORIGUAL, 15);
-/*
 		
-		/*System.out.println("Introduce un número entre 0 y 10");
-		lecturaminmax(Enum2.AMBOSINC, 0, 10);
-*/
-		System.out.println("Introduz*");
-		lecturaBoolean(); 
+		int opcion, opcion2, opcion3;
+		boolean repeticion, respuesta;
+		do {
+		System.out.println("MENÚ DE PRUEBA");
+		do {
+		System.out.println("Seleccione una opción: ");
+		System.out.println("(1) Cerrar teclado");
+		System.out.println("(2) Lectura de un caracter");
+		System.out.println("(3) Lectura de una cadena");
+		System.out.println("(4) Lectura de un número cualquiera para cada tipo");
+		System.out.println("(5) Lectura de un número mayor, menor o igual que un valor pasado como parámetro");
+		System.out.println("(6) Lectura de un número que debe estar entre un valor mínimo y uno máximo");
+		System.out.println("(7) Lectura de un boolean");
+		opcion=lecturaInt();
+		} while (opcion > 7 || opcion < 1);
+		if (opcion == 1) {
+			closeKeyboard();
+		}
+		else if (opcion == 2) {
+			System.out.println("Introduce un caracter");
+			lecturaCaracter();
+		}
+		else if (opcion == 3) {
+			System.out.println("Introduce una cadena");
+			lecturaString();
+		}
+		else if (opcion == 4) {
+			do {
+				System.out.println("Elija un tipo de número a probar: ");
+				System.out.println("(1) byte");
+				System.out.println("(2) short");
+				System.out.println("(3) int");
+				System.out.println("(4) long");
+				System.out.println("(5) float");
+				System.out.println("(6) double");
+				opcion2=lecturaInt();
+			} while (opcion2 > 6 || opcion2 < 1 );
+			if (opcion2 == 1) {
+				System.out.println("Introduzca un número entre el rango de un byte (-128 a 127)");
+				lecturaByte();
+			}
+			else if (opcion2 == 2) {
+				System.out.println("Introduzca un número entre el rango de un short (-32768 a 32767)");
+				lecturaShort();
+			}
+			else if (opcion2 == 3) {
+				System.out.println("Introduzca un número entre el rango de un int (-2147483648 a 2147483647)");
+				lecturaInt();
+			}
+			else if (opcion2 == 4) {
+				System.out.println("Introduzca un número entre el rango de un long (-9223372036854775808 a 9223372036854775807)");
+				lecturaLong();
+			}
+			else if (opcion2 == 5) {
+				System.out.println("Introduzca un número entre el rango de un float (± 3.4x10-38 a ± 3.4x1038)");
+				lecturaFloat();
+			}
+			else if (opcion2 == 6) {
+				System.out.println("Introduzca un número entre el rango de un double (± 1.8x10-308 a ± 1.8x10308)");
+				lecturaDouble();
+			}
+		}
+		else if (opcion == 5) { //////////////////////////////////////////////////////////
+			do {
+				System.out.println("Elija un tipo de número a probar: ");
+				System.out.println("(1) byte");
+				System.out.println("(2) short");
+				System.out.println("(3) int");
+				System.out.println("(4) long");
+				System.out.println("(5) float");
+				System.out.println("(6) double");
+				opcion2=lecturaInt();
+			} while (opcion2 > 6 || opcion2 < 1 );
+			/////////////////////////////////////////////////////////////////////////////////////////////////////////// MAYOR MENOR IGUAL 
+			if (opcion2 == 1) {
+				System.out.println("Introduce si quiere probar un número mayor(1), menor(2), mayor o igual(3) o menor o igual(4) a 5 (usaremos 5 para todas las pruebas)");
+				opcion3=lecturaInt();
+				if (opcion3 == 1) {
+					System.out.println("Introduzca un número mayor a 5 (en un rango de tipo byte): ");
+					parametros(Enum.MAYOR,(int) 5);
+				}
+				else if (opcion3 == 2) {
+					System.out.println("Introduzca un número menor a 5 (en un rango de tipo byte): ");
+					parametros(Enum.MENOR,(int) 5);
+				}
+				else if (opcion3 == 3) {
+					System.out.println("Introduzca un número mayor o igual a 5 (en un rango de tipo byte): ");
+					parametros(Enum.MAYORIGUAL,(int) 5);
+				}
+				else if (opcion3 == 4) {
+					System.out.println("Introduzca un número menor o igual a 5 (en un rango de tipo byte): ");
+					parametros(Enum.MENORIGUAL,(int) 5);
+				}
+			} 
+			else if (opcion2 == 2) {
+				System.out.println("Introduce si quiere probar un número mayor(1), menor(2), mayor o igual(3) o menor o igual(4) a 5 (usaremos 5 para todas las pruebas)");
+				opcion3=lecturaInt();
+				if (opcion3 == 1) {
+					System.out.println("Introduzca un número mayor a 5 (en un rango de tipo short): ");
+					parametros(Enum.MAYOR,(short) 5);
+				}
+				else if (opcion3 == 2) {
+					System.out.println("Introduzca un número menor a 5 (en un rango de tipo short) ");
+					parametros(Enum.MENOR,(short) 5);
+				}
+				else if (opcion3 == 3) {
+					System.out.println("Introduzca un número mayor o igual a 5 (en un rango de tipo short): ");
+					parametros(Enum.MAYORIGUAL,(short) 5);
+				}
+				else if (opcion3 == 4) {
+					System.out.println("Introduzca un número menor o igual a 5 (en un rango de tipo short): ");
+					parametros(Enum.MENORIGUAL,(short) 5);
+				}
+			} 
+			else if (opcion2 == 3) {
+				System.out.println("Introduce si quiere probar un número mayor(1), menor(2), mayor o igual(3) o menor o igual(4) a 5 (usaremos 5 para todas las pruebas)");
+				opcion3=lecturaInt();
+				if (opcion3 == 1) {
+					System.out.println("Introduzca un número mayor a 5 (en un rango de tipo int): ");
+					parametros(Enum.MAYOR,(int) 5);
+				}
+				else if (opcion3 == 2) {
+					System.out.println("Introduzca un número menor a 5 (en un rango de tipo int) ");
+					parametros(Enum.MENOR,(int) 5);
+				}
+				else if (opcion3 == 3) {
+					System.out.println("Introduzca un número mayor o igual a 5 (en un rango de tipo int): ");
+					parametros(Enum.MAYORIGUAL,(int) 5);
+				}
+				else if (opcion3 == 4) {
+					System.out.println("Introduzca un número menor o igual a 5 (en un rango de tipo int): ");
+					parametros(Enum.MENORIGUAL,(int) 5);
+				}
+			}
+			else if (opcion2 == 4) {
+				System.out.println("Introduce si quiere probar un número mayor(1), menor(2), mayor o igual(3) o menor o igual(4) a 5 (usaremos 5 para todas las pruebas)");
+				opcion3=lecturaInt();
+				if (opcion3 == 1) {
+					System.out.println("Introduzca un número mayor a 5 (en un rango de tipo long): ");
+					parametros(Enum.MAYOR,(long) 5);
+				}
+				else if (opcion3 == 2) {
+					System.out.println("Introduzca un número menor a 5 (en un rango de tipo long) ");
+					parametros(Enum.MENOR,(long) 5);
+				}
+				else if (opcion3 == 3) {
+					System.out.println("Introduzca un número mayor o igual a 5 (en un rango de tipo long): ");
+					parametros(Enum.MAYORIGUAL,(long) 5);
+				}
+				else if (opcion3 == 4) {
+					System.out.println("Introduzca un número menor o igual a 5 (en un rango de tipo long): ");
+					parametros(Enum.MENORIGUAL,(long) 5);
+				}
+			}
+			else if (opcion2 == 5) {
+				System.out.println("Introduce si quiere probar un número mayor(1), menor(2), mayor o igual(3) o menor o igual(4) a 5 (usaremos 5 para todas las pruebas)");
+				opcion3=lecturaInt();
+				if (opcion3 == 1) {
+					System.out.println("Introduzca un número mayor a 5 (en un rango de tipo float): ");
+					parametros(Enum.MAYOR,(float) 5);
+				}
+				else if (opcion3 == 2) {
+					System.out.println("Introduzca un número menor a 5 (en un rango de tipo float) ");
+					parametros(Enum.MENOR,(float) 5);
+				}
+				else if (opcion3 == 3) {
+					System.out.println("Introduzca un número mayor o igual a 5 (en un rango de tipo float): ");
+					parametros(Enum.MAYORIGUAL,(float) 5);
+				}
+				else if (opcion3 == 4) {
+					System.out.println("Introduzca un número menor o igual a 5 (en un rango de tipo float): ");
+					parametros(Enum.MENORIGUAL,(float) 5);
+				}
+			}
+			else if (opcion2 == 6) {
+				System.out.println("Introduce si quiere probar un número mayor(1), menor(2), mayor o igual(3) o menor o igual(4) a 5 (usaremos 5 para todas las pruebas)");
+				opcion3=lecturaInt();
+				if (opcion3 == 1) {
+					System.out.println("Introduzca un número mayor a 5 (en un rango de tipo double): ");
+					parametros(Enum.MAYOR,(double) 5);
+				}
+				else if (opcion3 == 2) {
+					System.out.println("Introduzca un número menor a 5 (en un rango de tipo double) ");
+					parametros(Enum.MENOR,(double) 5);
+				}
+				else if (opcion3 == 3) {
+					System.out.println("Introduzca un número mayor o igual a 5 (en un rango de tipo double): ");
+					parametros(Enum.MAYORIGUAL,(double) 5);
+				}
+				else if (opcion3 == 4) {
+					System.out.println("Introduzca un número menor o igual a 5 (en un rango de tipo double): ");
+					parametros(Enum.MENORIGUAL,(double) 5);
+				}
+			}
+			
+		} //////////////////////////////////////////////////////////////////////////////////////////// MAYOR MENOR IGUAL 
+		else if (opcion == 6) { 
+			do {
+				System.out.println("Elija un tipo de número a probar: ");
+				System.out.println("(1) byte");
+				System.out.println("(2) short");
+				System.out.println("(3) int");
+				System.out.println("(4) long");
+				System.out.println("(5) float");
+				System.out.println("(6) double");
+				opcion2=lecturaInt();
+		     } while (opcion2 > 6 || opcion2 < 1 );
+			if (opcion2 == 1) {
+				System.out.println("Introduce si quiere que los números del rango estén ambos incluidos(1), ambos excluidos(2), el minimo incluido(3) o el minimo excluido(4) (usaremos el mismo rango para todas las pruebas)");
+					opcion3=lecturaInt();
+				if (opcion3 == 1) {
+					System.out.println("Introduzca un número entre 0 y 10(en un rango de tipo byte): ");
+					lecturaminmax(Enum2.AMBOSINC,(byte) 0,(byte) 10);
+				}
+				else if (opcion3 == 2) {
+					System.out.println("Introduzca un número entre 0 y 10 (en un rango de tipo byte): ");
+					lecturaminmax(Enum2.AMBOSEXC,(byte) 0,(byte) 10);
+				}
+				else if (opcion3 == 3) {
+					System.out.println("Introduzca un número entre 0 y 10 (en un rango de tipo byte): ");
+					lecturaminmax(Enum2.MININC,(byte) 0,(byte) 10);
+				}
+				else if (opcion3 == 4) {
+					System.out.println("Introduzca un número entre 0 y 10 (en un rango de tipo byte): ");
+					lecturaminmax(Enum2.MINEXC,(byte) 0,(byte) 10);
+				}
+			}
+			else if (opcion2 == 2) {
+				System.out.println("Introduce si quiere que los números del rango estén ambos incluidos(1), ambos excluidos(2), el minimo incluido(3) o el minimo excluido(4)(usaremos el mismo rango para todas las pruebas)");
+					opcion3=lecturaInt();
+				if (opcion3 == 1) {
+					System.out.println("Introduzca un número entre 0 y 10(en un rango de tipo short): ");
+					lecturaminmax(Enum2.AMBOSINC,(short) 0,(short) 10);
+				}
+				else if (opcion3 == 2) {
+					System.out.println("Introduzca un número entre 0 y 10 (en un rango de tipo short): ");
+					lecturaminmax(Enum2.AMBOSEXC,(short) 0,(short) 10);
+				}
+				else if (opcion3 == 3) {
+					System.out.println("Introduzca un número entre 0 y 10 (en un rango de tipo short): ");
+					lecturaminmax(Enum2.MININC,(short) 0,(short) 10);
+				}
+				else if (opcion3 == 4) {
+					System.out.println("Introduzca un número entre 0 y 10 (en un rango de tipo short): ");
+					lecturaminmax(Enum2.MINEXC,(short) 0,(short) 10);
+				}
+				
+			}
+			else if (opcion2 == 3) {
+				System.out.println("Introduce si quiere que los números del rango estén ambos incluidos(1), ambos excluidos(2), el minimo incluido(3) o el minimo excluido(4)(usaremos el mismo rango para todas las pruebas)");
+					opcion3=lecturaInt();
+				if (opcion3 == 1) {
+					System.out.println("Introduzca un número entre 0 y 10(en un rango de tipo int): ");
+					lecturaminmax(Enum2.AMBOSINC,(int) 0,(int) 10);
+				}
+				else if (opcion3 == 2) {
+					System.out.println("Introduzca un número entre 0 y 10 (en un rango de tipo int): ");
+					lecturaminmax(Enum2.AMBOSEXC,(int) 0,(int) 10);
+				}
+				else if (opcion3 == 3) {
+					System.out.println("Introduzca un número entre 0 y 10 (en un rango de tipo int): ");
+					lecturaminmax(Enum2.MININC,(int) 0,(int) 10);
+				}
+				else if (opcion3 == 4) {
+					System.out.println("Introduzca un número entre 0 y 10 (en un rango de tipo int): ");
+					lecturaminmax(Enum2.MINEXC,(int) 0,(int) 10);
+				}
+				
+			}
+			else if (opcion2 == 4) {
+				System.out.println("Introduce si quiere que los números del rango estén ambos incluidos(1), ambos excluidos(2), el minimo incluido(3) o el minimo excluido(4)(usaremos el mismo rango para todas las pruebas)");
+					opcion3=lecturaInt();
+				if (opcion3 == 1) {
+					System.out.println("Introduzca un número entre 0 y 10(en un rango de tipo long): ");
+					lecturaminmax(Enum2.AMBOSINC,(long) 0,(long) 10);
+				}
+				else if (opcion3 == 2) {
+					System.out.println("Introduzca un número entre 0 y 10 (en un rango de tipo long): ");
+					lecturaminmax(Enum2.AMBOSEXC,(long) 0,(long) 10);
+				}
+				else if (opcion3 == 3) {
+					System.out.println("Introduzca un número entre 0 y 10 (en un rango de tipo long): ");
+					lecturaminmax(Enum2.MININC,(long) 0,(long) 10);
+				}
+				else if (opcion3 == 4) {
+					System.out.println("Introduzca un número entre 0 y 10 (en un rango de tipo long): ");
+					lecturaminmax(Enum2.MINEXC,(long) 0,(long) 10);
+				}
+				
+			}
+			else if (opcion2 == 5) {
+				System.out.println("Introduce si quiere que los números del rango estén ambos incluidos(1), ambos excluidos(2), el minimo incluido(3) o el minimo excluido(4)(usaremos el mismo rango para todas las pruebas)");
+					opcion3=lecturaInt();
+				if (opcion3 == 1) {
+					System.out.println("Introduzca un número entre 0 y 10(en un rango de tipo float): ");
+					lecturaminmax(Enum2.AMBOSINC,(float) 0,(float) 10);
+				}
+				else if (opcion3 == 2) {
+					System.out.println("Introduzca un número entre 0 y 10(en un rango de tipo float): ");
+					lecturaminmax(Enum2.AMBOSEXC,(float) 0,(float) 10);
+				}
+				else if (opcion3 == 3) {
+					System.out.println("Introduzca un número entre 0 y 10 (en un rango de tipo float): ");
+					lecturaminmax(Enum2.MININC,(float) 0,(float) 10);
+				}
+				else if (opcion3 == 4) {
+					System.out.println("Introduzca un número entre 0 y 10 (en un rango de tipo long): ");
+					lecturaminmax(Enum2.MINEXC,(float) 0,(float) 10);
+				}
+				
+			}
+			else if (opcion2 == 6) {
+				System.out.println("Introduce si quiere que los números del rango estén ambos incluidos(1), ambos excluidos(2), el minimo incluido(3) o el minimo excluido(4)(usaremos el mismo rango para todas las pruebas)");
+					opcion3=lecturaInt();
+				if (opcion3 == 1) {
+					System.out.println("Introduzca un número entre 0 y 10(en un rango de tipo double): ");
+					lecturaminmax(Enum2.AMBOSINC,(double) 0,(double) 10);
+				}
+				else if (opcion3 == 2) {
+					System.out.println("Introduzca un número entre 0 y 10 (en un rango de tipo double): ");
+					lecturaminmax(Enum2.AMBOSEXC,(double) 0,(double) 10);
+				}
+				else if (opcion3 == 3) {
+					System.out.println("Introduzca un número entre 0 y 10 (en un rango de tipo double): ");
+					lecturaminmax(Enum2.MININC,(double) 0,(double) 10);
+				}
+				else if (opcion3 == 4) {
+					System.out.println("Introduzca un número entre 0 y 10 (en un rango de tipo double): ");
+					lecturaminmax(Enum2.MINEXC,(double) 0,(double) 10);
+				}
+				
+			}
+		}
+		else if (opcion == 7) {
+			
+			System.out.println("Elija el tipo de boolean a probar: ");
+			System.out.println("(1) Boolean 1/2");
+			System.out.println("(2) Boolean s/n");
+			opcion2=lecturaInt();
+			if (opcion2 == 1) {
+				respuesta=lecturaBoolean("¿Vives solo?", "Si", "No");
+				if (respuesta==true) {
+					System.out.println("Vives solo");
+				}
+				else {
+					System.out.println("No vives solo");
+				}
+			}
+			else if (opcion2 == 2) {
+				System.out.println("¿Vives solo?");
+				respuesta=lecturaBoolean();
+				if (respuesta==true) {
+					System.out.println("Vives solo");
+				}
+				else {
+					System.out.println("No vives solo");
+				}
+			}
+		}
+		
+		repeticion=lecturaBoolean("¿Quiere realizar otra prueba?", "Si", "No" );
+		
+		} while (repeticion);
+		
+			
+		
+	
+		
 	}
 	
 
