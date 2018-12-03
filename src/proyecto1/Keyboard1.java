@@ -42,7 +42,7 @@ public class Keyboard1 {
 	public static String lecturaString() {
 		
 		String x = "";
-		x=keyboard.next();
+		x=keyboard.nextLine();
 		return x;
 	}
 	
@@ -61,8 +61,11 @@ public class Keyboard1 {
 		}
 		catch (InputMismatchException e) {
 			y = true;
-			keyboard.nextLine();
+			
 			System.out.println("Error, introduce un numero valido: ");
+		} 
+		finally { 
+			keyboard.nextLine();
 		}
 		} while(y);
 		return x;
@@ -79,8 +82,10 @@ public class Keyboard1 {
 			}
 			catch (InputMismatchException e) {
 				y = true;
-				keyboard.nextLine();
 				System.out.println("Error, introduce un numero valido: ");
+			} 
+			finally { 
+				keyboard.nextLine();
 			}
 			} while(y);
 			return x;
@@ -98,8 +103,10 @@ public class Keyboard1 {
 		}
 		catch (InputMismatchException e) {
 			y = true;
-			keyboard.nextLine();
 			System.out.println("Error, introduce un numero valido: ");
+		}
+		finally { 
+			keyboard.nextLine();
 		}
 		} while(y);
 		return x;
@@ -116,8 +123,10 @@ public class Keyboard1 {
 		}
 		catch (InputMismatchException e) {
 			y = true;
-			keyboard.nextLine();
 			System.out.println("Error, introduce un numero valido: ");
+		}
+		finally { 
+			keyboard.nextLine();
 		}
 		} while(y);
 		return x;
@@ -134,8 +143,10 @@ public class Keyboard1 {
 		}
 		catch (InputMismatchException e) {
 			y = true;
-			keyboard.nextLine();
 			System.out.println("Error, introduce un numero valido: ");
+		}
+		finally { 
+			keyboard.nextLine();
 		}
 		} while(y);
 		return x;
@@ -152,8 +163,10 @@ public class Keyboard1 {
 		}
 		catch (InputMismatchException e) {
 			y = true;
-			keyboard.nextLine();
 			System.out.println("Error, introduce un numero valido : ");
+		}
+		finally { 
+			keyboard.nextLine();
 		}
 		} while(y);
 		return x;
@@ -161,8 +174,7 @@ public class Keyboard1 {
 	
 /* - Crear 6 funciones para cada tipo para leer un número mayor, menor o igual pasado como parámetro utilizando sobrecarga
  * para que se llamen igual y crear un enum.
- * - Crear un enum al principio indicando las distintas opciones posibles, que sean mayor, menor, mayor o igual y menor o igual que el número indicado.
- * - Usar sobrecarga para que las 6 funciones se llamen igual.
+ 
  * - En cada posibilidad mostrar un error que indique número incorrecto si está fuera del rango que ha pedido la consola.
  * - No hace falta crear una excepción por si introduce un carácter inválido debido a que usaremos las funciones anteriores
  * para crear estas y ya estarían hechas las excepciones.
@@ -405,7 +417,7 @@ public class Keyboard1 {
 	public static int lecturaminmax (Enum2 valor, int x, int y) {
 		int numero=0;
 		if (x > y) {
-			throw new IllegalArgumentException();
+			throw new IllegalArgumentException("Error el primer número debe ser menor que el segundo");
 		}
 		if (valor == Enum2.AMBOSINC) {
 			do {
@@ -447,7 +459,7 @@ public class Keyboard1 {
 	public static byte lecturaminmax (Enum2 valor, byte x, byte y) {
 		byte numero=0;
 		if (x > y) {
-			throw new IllegalArgumentException();
+			throw new IllegalArgumentException("Error el primer número debe ser menor que el segundo");
 		}
 		if (valor == Enum2.AMBOSINC) {
 			do {
@@ -489,7 +501,7 @@ public class Keyboard1 {
 	public static short lecturaminmax (Enum2 valor, short x, short y) {
 		short numero=0;
 		if (x > y) {
-			throw new IllegalArgumentException();
+			throw new IllegalArgumentException("Error el primer número debe ser menor que el segundo");
 		}
 		if (valor == Enum2.AMBOSINC) {
 			do {
@@ -531,7 +543,7 @@ public class Keyboard1 {
 	public static long lecturaminmax (Enum2 valor, long x, long y) {
 		long numero=0;
 		if (x > y) {
-			throw new IllegalArgumentException();
+			throw new IllegalArgumentException("Error el primer número debe ser menor que el segundo");
 		}
 		if (valor == Enum2.AMBOSINC) {
 			do {
@@ -573,7 +585,7 @@ public class Keyboard1 {
 	public static float lecturaminmax (Enum2 valor, float x, float y) {
 		float numero=0;
 		if (x > y) {
-			throw new IllegalArgumentException();
+			throw new IllegalArgumentException("Error el primer número debe ser menor que el segundo");
 		}
 		if (valor == Enum2.AMBOSINC) {
 			do {
@@ -615,7 +627,7 @@ public class Keyboard1 {
 	public static double lecturaminmax (Enum2 valor, double x, double y) {
 		double numero=0;
 		if (x > y) {
-			throw new IllegalArgumentException();
+			throw new IllegalArgumentException("Error el primer número debe ser menor que el segundo");
 		}
 		if (valor == Enum2.AMBOSINC) {
 			do {
@@ -663,42 +675,20 @@ public class Keyboard1 {
 
 	
 	public static boolean lecturaBoolean (String inicio, String opcion1, String opcion2) {
-		boolean opcion = true;
 		int num;
-		System.out.printf("%s%n1- %s%n2- %s%n",inicio,opcion1,opcion2);
-		do {
-		num = lecturaInt();
-		} while (num < 1 || num > 2);
-		if (num == 1) {
-			opcion = true;			
-		}
-		else if (num == 2) {
-			opcion = false;
-		}
-		
-				
-		return opcion;
+		System.out.printf("%s%n1- %s%n2- %s%n",inicio,opcion1,opcion2);		
+		num = lecturaminmax(Enum2.AMBOSINC,1,2);			
+		return num==1;
 	}
 	
 	public static boolean lecturaBoolean () {
-		boolean devuelve = true, error = false;
-		String respuesta;
-		do {
-			error = false;	
-		respuesta = lecturaString();
-		if (respuesta.equals("s") || respuesta.equals("S")) {
-			devuelve=true;
-		}
-		else if(respuesta.equals("n") || respuesta.equals("N")) {
-			devuelve=false;
-		}
-		else {
-			System.out.println("Introduce un carácter valido");
-			error = true;
-		}
-		} while (error == true);
-		return devuelve;
+		char respuesta;
+		respuesta = lecturaCaracter();
+		
+		return respuesta=='s' || respuesta =='S';
 	}
+
+
 
 // Hacer un menú de prueba en el main con todas las funciones anteriormente creadass.
 	public static void main(String[] args) {
